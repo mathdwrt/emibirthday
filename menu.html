@@ -1,0 +1,108 @@
+<html>
+  <head>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="p-8 bg-black flex flex-col">
+    <div class="h-48 w-auto mb-6">
+      <img src="PADELLA-logo.png" class="h-full w-full object-contain" />
+    </div>
+    <h3 class="text-3xl text-white font-semibold text-center">
+      Thursday 4th April
+    </h3>
+    <div class="border border-2 border-white flex flex-col text-white mt-8">
+      <div class="flex flex-row max-w-full">
+        <div
+          id="foodTab"
+          class="cursor-pointer border border-1 border-white grow h-16 text-2xl flex items-center justify-center border-b-8"
+        >
+          Food
+        </div>
+        <div
+          id="drinksTab"
+          class="cursor-pointer border border-1 border-white grow h-16 text-2xl flex items-center justify-center text-gray-500"
+        >
+          Drinks
+        </div>
+      </div>
+      <div id="foodContent" class="p-8 flex flex-col">
+        <h3 class="text-2xl font-semibold mb-2">Antipasti</h3>
+        <div class="flex flex-row text-md">
+          <div class="grow">Nocellara olives</div>
+          <div class="font-semibold">£0</div>
+        </div>
+        <div class="flex flex-row text-md mb-5">
+          <div class="grow">Burrata with Le Ferre olive oil</div>
+          <div class="font-semibold">£0</div>
+        </div>
+        <h3 class="text-2xl font-semibold mb-2">Pasta</h3>
+        <div class="flex flex-row text-md mb-5">
+          <div class="grow">
+            Fettuccine with Cobble Lane Cured nduja, mascarpone & lemon
+          </div>
+          <div class="font-semibold">£0</div>
+        </div>
+        <h3 class="text-2xl font-semibold mb-2">Pudding</h3>
+        <div class="flex flex-row text-md mb-5">
+          <div class="grow">Tiramisu</div>
+          <div class="font-semibold">£0</div>
+        </div>
+      </div>
+      <div id="drinksContent" class="p-8 hidden">
+        <h3 class="text-2xl font-semibold mb-2">Aperitivi</h3>
+        <div class="flex flex-row text-md">
+          <div class="grow">
+            Padella Martini <em>(Broker's dry gin, Carpano dry)</em>
+          </div>
+          <div class="font-semibold">£0</div>
+        </div>
+        <div class="flex flex-row text-md mb-5">
+          <div class="grow">Padella Spritz</div>
+          <div class="font-semibold">£0</div>
+        </div>
+        <h3 class="text-2xl font-semibold mb-2">Wine</h3>
+        <div class="flex flex-row text-md">
+          <div class="grow">
+            Trebbiano Chardonnay, Masini 2022, Tuscany (white)
+          </div>
+          <div class="font-semibold">£0</div>
+        </div>
+        <div class="flex flex-row text-md mb-5">
+          <div class="grow">Chianti,Poggiotondo 2020, Tuscany (red)</div>
+          <div class="font-semibold">£0</div>
+        </div>
+        <h3 class="text-2xl font-semibold mb-2">Digestivi</h3>
+        <div class="flex flex-row text-md mb-5">
+          <div class="grow">Amaretto</div>
+          <div class="font-semibold">£0</div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const foodTab = document.getElementById("foodTab");
+      const drinksTab = document.getElementById("drinksTab");
+
+      const foodContent = document.getElementById("foodContent");
+      const drinksContent = document.getElementById("drinksContent");
+
+      // Add click event listeners to tabs
+      foodTab.addEventListener("click", () => {
+        foodTab.classList.add("border-b-8");
+        foodTab.classList.remove("text-gray-500");
+        drinksTab.classList.remove("border-b-8");
+        drinksTab.classList.add("text-gray-500");
+        foodContent.classList.remove("hidden");
+        drinksContent.classList.add("hidden");
+      });
+
+      drinksTab.addEventListener("click", () => {
+        drinksTab.classList.add("border-b-8");
+        drinksTab.classList.remove("text-gray-500");
+        foodTab.classList.remove("border-b-8");
+        foodTab.classList.add("text-gray-500");
+        foodContent.classList.add("hidden");
+        drinksContent.classList.remove("hidden");
+      });
+    </script>
+  </body>
+</html>
